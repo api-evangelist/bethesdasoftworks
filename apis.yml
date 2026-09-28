@@ -1,23 +1,74 @@
 aid: bethesdasoftworks
+
 name: Bethesdasoftworks
-description: 'Bethesdasoftworks is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+
+description: Bethesda Softworks is an American video game publisher based in Rockville, Maryland, known for popular franchises such as The Elder
+  Scrolls, Fallout, and Doom. Founded in 1986, the company develops and publishes games across multiple platforms, operating a digital storefront
+  at bethesda.net and supporting a vibrant community of players worldwide.
+
 url: https://raw.githubusercontent.com/api-evangelist/bethesdasoftworks/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-28 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-28'
+
 modified: '2026-09-28'
+
 tags:
 - Company
-apis: []
+- Gaming
+- VideoGames
+- Publisher
+- Bethesda
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: LLMsTxt
+  url: llms/bethesdasoftworks-llms.txt
+- type: WellKnown
+  url: well-known/bethesdasoftworks-well-known.yml
+- type: Hosts
+  url: hosts/bethesdasoftworks-hosts.yml
+- type: Vendors
+  url: vendors/bethesdasoftworks-vendors.yml
+- type: Newsroom
+  url: https://bethesda.net/news
+- type: Documentation
+  url: https://help.bethesda.net/
+- type: DomainSecurity
+  url: security/bethesdasoftworks-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/bethesdasoftworks
+  url: https://bethesda.net
+
+apis:
+- name: Bethesda API
+  description: API reference for Bethesda services as described on the Bethesda website.
+  humanURL: https://bethesda.net/en-US
+  aid: bethesdasoftworks:bethesda-api
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: Bethesda provides API reference pages but no machine‑readable OpenAPI/GraphQL/AsyncAPI contract was discoverable.
+  evidence:
+  - url: https://api.bethesda.net/openapi.json
+    status: 200
+  checked: '2026-09-28'
+x-enrichment:
+  date: '2026-09-28'
+  status: enriched
+  artifacts_added: 11
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
